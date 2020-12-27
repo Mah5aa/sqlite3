@@ -1,0 +1,7 @@
+.tables // to show tables 
+
+.mode csv 
+.import carriers.csv Carriers 
+.import weekdays.csv Weekdays 
+.import months.csv Months 
+.import flights-small.csv Flights
