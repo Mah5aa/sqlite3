@@ -1,0 +1,28 @@
+.open flghts.db //create flights table 
+
+
+/* create tables and set pk and fk */ 
+
+CREATE TABLE Carriers ( cid CHARACTER(20) not null PRIMARY KEY, name NVARCHAR(100) not null );
+CREATE TABLE Months ( mid INTEGER not null PRIMARY KEY, month CHARACTER(20) not null ); 
+CREATE TABLE Weekdays ( did INTEGER not null PRIMARY KEY, day_of_week CHARACTER(20) not null ); 
+CREATE TABLE Flights ( fid INTEGER PRIMARY KEY,
+year INTEGER, month_id INTEGER,
+day_of_month INTEGER, day_of_week_id INTEGER,
+carrier_id CHARACTER(20) ,
+flight_num INTEGER,
+origin_city NVARCHAR(100) ,
+origin_state NVARCHAR(100) ,
+dest_city NVARCHAR(100) ,
+dest_state NVARCHAR(100) ,
+departure_delay INTEGER,
+taxi_out INTEGER,
+arrival_delay INTEGER,
+canceled BOOLEAN ,
+actual_time INTEGER,
+distance INTEGER,
+capacity INTEGER,
+price REAL ,
+FOREIGN KEY (month_id) REFERENCES Months (mid),
+FOREIGN KEY (day_of_week_id) REFERENCES Weekdays (did) ,
+FOREIGN KEY (carrier_id) REFERENCES Carriers (cid) );
