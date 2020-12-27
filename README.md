@@ -9,3 +9,4 @@ sqlite3 is a simple RDBMS to getting start with SQL programing in little project
 6. import csv datas into tables 
 7. lets go!
 
+for next steps and write query read Wiki
